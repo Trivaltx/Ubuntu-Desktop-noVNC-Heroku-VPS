@@ -33,7 +33,7 @@ RUN apt-get update && \
     tar xvf control.tar.xz && \
     tar xvf data.tar.xz && \
     dpkg --configure -a && \
-    apt-get install -f ./fahclient_7.6.21_amd64.deb && \
+    apt-get install -f ./fahcontrol_7.6.21-1_all.deb && \
     apt-get autoclean -y  && \
     apt-get autoremove
     
