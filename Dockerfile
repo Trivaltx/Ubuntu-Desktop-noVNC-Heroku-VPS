@@ -6,7 +6,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt install dbus-x11 -y  && \
     apt install sudo -y  && \ 
-    apt install bash -y  && \ 
+    apt install bash -y  && \
+    apt install gdebi -y && \
+    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
+    apt-get install fahclient_7.6.21_amd64.deb && \
     apt install net-tools -y  && \
     apt install novnc -y  && \ 
     apt install x11vnc -y  && \ 
@@ -27,9 +30,6 @@ RUN apt-get update && \
     apt install zip -y  && \
     apt install unzip -y  && \
     apt install falkon -y  && \
-    apt install gdebi -y && \
-    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
-    apt install fahclient_7.6.21_amd64.deb -y && \
     apt-get autoclean -y  && \
     apt-get autoremove
     
