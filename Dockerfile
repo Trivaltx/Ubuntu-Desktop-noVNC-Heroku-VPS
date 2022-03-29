@@ -28,8 +28,8 @@ RUN apt-get update && \
     apt install zip -y  && \
     apt install unzip -y  && \
     apt install falkon -y  && \
-    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
-    ar vx fahclient_7.6.21_amd64.deb && \
+    wget https://download.foldingathome.org/releases/public/release/fahcontrol/debian-stable-64bit/v7.6/fahcontrol_7.6.21-1_all.deb && \
+    ar vx fahcontrol_7.6.21-1_all.deb && \
     tar xvf control.tar.xz && \
     tar xvf data.tar.xz && \
     dpkg --configure -a && \
@@ -39,8 +39,6 @@ RUN apt-get update && \
     
 RUN wget https://raw.githubusercontent.com/Trivaltx/oktetoremote/main/000-default.conf
 RUN wget https://raw.githubusercontent.com/Trivaltx/Ubuntu-Desktop-noVNC-Heroku-VPS/main/config.xml
-RUN rm /etc/fahclient/config.xml
-RUN mv config.xml /etc/fahclient
 RUN rm /etc/apache2/sites-available/000-default.conf
 RUN mv 000-default.conf /etc/apache2/sites-available
 RUN npm install -g wstunnel
