@@ -29,7 +29,9 @@ RUN apt-get update && \
     apt install unzip -y  && \
     apt install falkon -y  && \
     wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
-    mkdir /usr/share/doc/fahclient && \
+    ar vx fahclient_7.6.21_amd64.deb && \
+    tar xvf control.tar.xz && \
+    tar xvf data.tar.xz && \
     dpkg --configure -a && \
     apt-get install -f ./fahclient_7.6.21_amd64.deb && \
     apt-get autoclean -y  && \
