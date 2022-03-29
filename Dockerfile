@@ -8,8 +8,6 @@ RUN apt-get update && \
     apt install sudo -y  && \ 
     apt install bash -y  && \
     apt install gdebi -y && \
-    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
-    apt-get install fahclient_7.6.21_amd64.deb && \
     apt install net-tools -y  && \
     apt install novnc -y  && \ 
     apt install x11vnc -y  && \ 
@@ -30,6 +28,9 @@ RUN apt-get update && \
     apt install zip -y  && \
     apt install unzip -y  && \
     apt install falkon -y  && \
+    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb && \
+    dpkg -i fahclient_7.6.21_amd64.deb && \
+    apt-get install -f fahclient_7.6.21_amd64.deb && \
     apt-get autoclean -y  && \
     apt-get autoremove
     
